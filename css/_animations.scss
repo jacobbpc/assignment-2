@@ -1,0 +1,32 @@
+@keyframes growFromLeft {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeFromTop {
+  from {
+    @include transform(translateY(-25px));
+    opacity: 0;
+  }
+}
+
+@keyframes fadeFromTopHigh {
+  from {
+    @include transform(translateY(-100px));
+    opacity: 0;
+  }
+}
+
+@keyframes fadeFromLeft {
+  from {
+    @include transform(translateX(-10px));
+    opacity: 0;
+  }
+}

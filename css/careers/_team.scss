@@ -1,0 +1,85 @@
+#careers-team {
+	h1 {
+		text-align: center;
+		font-size: 2.45em;
+		margin: 50px 0;
+
+		span {
+			font-weight: 800;
+			position: relative;
+		}
+
+		span:before {
+			content: '';
+			z-index: -1;
+
+			position: absolute;
+			height: 17px;
+			bottom: 2px;
+			left: -1px;
+			width: 70px;
+			background: $red-primary;
+		}
+	}
+
+	#team-holder {
+		display: flex;
+		flex-flow: row wrap;
+		// justify-content: space-between;
+		// align-items: flex-start;
+		// align-content: flex-start;
+
+		$transitionTime: 0.2s;
+		.person {
+			width: 27%;
+			margin: 25px;
+			// height: 500px;
+			background-size: cover;
+			background-position: center;
+			transition: box-shadow $transitionTime ease-in-out,
+				transform $transitionTime ease-in-out;
+			transform-style: preserve-3d;
+			perspective: 40px;
+			position: relative;
+
+			.details {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: $dark-primary;
+				opacity: 0;
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: center;
+				align-items: center;
+				align-content: center;
+				@include transition(opacity $transitionTime ease-in-out);
+
+				h1 {
+					margin: 0;
+				}
+
+				p {
+					margin: 10px 0 0 0;
+					font-weight: 100;
+				}
+			}
+		}
+
+		.aspect {
+			padding-bottom: 125%;
+		}
+
+		.person:hover {
+			cursor: pointer;
+			box-shadow: 7px 6px 20px 5px #00000017;
+			@include transform(rotateY(-10deg) rotateX(-5deg));
+		}
+
+		.person:hover > .details {
+			opacity: 0.9;
+		}
+	}
+}

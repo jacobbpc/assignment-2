@@ -1,0 +1,101 @@
+.call-for-action {
+	height: 100vh;
+
+	.col {
+		height: 100%;
+	}
+
+	$primaryWidth: 60%;
+	#one {
+		float: left;
+		width: $primaryWidth;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+
+		h1 {
+			font-size: 2em;
+			font-weight: 800;
+			margin: 0;
+
+			span {
+				font-weight: 900;
+				position: relative;
+			}
+
+			span:before {
+				content: '';
+				z-index: -1;
+
+				position: absolute;
+				height: 15px;
+				bottom: 2px;
+				left: 10px;
+				width: 110px;
+				background: $red-primary;
+			}
+		}
+
+		.buttons {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+
+			a {
+				display: inline-block;
+				padding: 12px 15px;
+				text-align: center;
+				text-decoration: none;
+				margin: 15px 7px;
+				border-radius: 3px;
+				outline: none;
+				font-size: 0.925em;
+				font-weight: 400;
+				user-select: none;
+				@include transition(all 0.075s ease-out);
+			}
+
+			a:hover {
+				cursor: pointer;
+				transform: scale(0.975) translateY(3px);
+			}
+
+			a:active {
+				transform: scale(0.95);
+			}
+
+			#jobs {
+				background: $red-primary;
+				border: none;
+				color: #fff;
+				@include box-shadow(10px 11px 19px 5px rgb(0, 0, 0, 34%));
+			}
+
+			#jobs:hover {
+				@include box-shadow(none);
+			}
+
+			#courses {
+				background: none;
+				// Have to use box-shadow to simulate a border because it has inset
+				// pain
+				box-shadow: 0 0 0 3px $red-primary inset;
+				border: none;
+				color: $red-primary;
+				font-weight: 200;
+			}
+		}
+	}
+
+	#two {
+		float: right;
+		width: calc(100% - #{$primaryWidth});
+		background: url('../assets/OfficeGroupOfPeople@2x.png');
+		background-size: cover;
+		background-position: center;
+	}
+}

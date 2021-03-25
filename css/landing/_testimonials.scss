@@ -1,0 +1,119 @@
+$panelCount: 4;
+
+#testimonials {
+  height: 100vh;
+  overflow: hidden;
+  perspective: 1000;
+  opacity: 0;
+  @include transition(opacity 0.5s ease-in-out);
+
+  .section {
+    & {
+      height: 100%;
+      width: calc(100% / #{$panelCount});
+      float: left;
+      position: relative;
+
+      // Kinda a mess but sets the background images of each section
+      $colors: url("../assets/asiaticlion.webp"), url("../assets/dribble2.webp"),
+        url("../assets/ring_road.webp"), url("../assets/donate.webp");
+      @for $i from 1 through length($colors) {
+        &:nth-child(#{$i}) {
+          background: nth($colors, $i);
+          background-size: cover;
+          background-position: center;
+        }
+      }
+
+      .modal {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 50%;
+        background: #111118f5;
+        padding: 1.5em;
+        border-radius: 1em;
+        box-shadow: 3px 5px 15px 5px #0000002f;
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        transform: translateX(-50%);
+
+        .testimonial {
+          float: left;
+          width: 80%;
+
+          h1 {
+            margin: 0 0 0.5em 0;
+            font-weight: 800;
+            font-size: 1.5em;
+            position: relative;
+          }
+
+          h1:before {
+            content: "";
+            z-index: -1;
+    
+            position: absolute;
+            height: 17px;
+            bottom: -1px;
+            left: -4px;
+            width: 110px;
+            background: $red-primary;
+          }
+
+          p {
+            margin: 0;
+            font-weight: 200;
+            font-size: 0.9em;
+          }
+        }
+
+        .profile {
+          float: right;
+          width: 20%;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          img {
+            width: 50%;
+            height: auto;
+            border-radius: 100%;
+          }
+
+          h2 {
+            margin: 10px 0 0 0;
+            font-weight: 700;
+            font-size: 1.2em;
+          }
+
+          p {
+            width: 100%;
+            font-weight: 200;
+            font-size: 0.85em;
+            text-align: center;
+            margin: 2px 0 0 0;
+          }
+        }
+      }
+    }
+    &s {
+      width: percentage($panelCount);
+      height: 100%;
+    }
+    // &-title {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+
+    //   font-size: 30px;
+    //   color: #000;
+    // }
+  }
+}

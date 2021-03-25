@@ -1,0 +1,45 @@
+// Variable declarations
+@import 'variables';
+
+// Imports
+@import 'mixins';
+@import 'animations';
+@import 'navbar';
+@import 'container';
+
+// Landing page
+@import 'landing/hero';
+@import 'landing/statistics';
+@import 'landing/testimonials';
+@import 'landing/call-for-action';
+
+// Careers page
+@import 'careers/hero';
+@import 'careers/team';
+@import 'careers/positions';
+@import 'careers/courses';
+
+// Listing page
+@import 'listing/hero';
+@import 'listing/content';
+
+// Global styles
+body {
+	margin: 0;
+	padding: 0;
+	background: $dark-primary;
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+}
+
+.shown {
+	opacity: 100 !important;
+}
+
+.divider {
+	display: block;
+	width: 60px;
+	height: 3px;
+	background: $red-primary;
+	margin: 100px auto;
+}

@@ -1,0 +1,36 @@
+#careers-hero {
+	height: 100vh;
+	background: url('../assets/office.jpg');
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+
+	h1 {
+		text-align: center;
+		font-size: 3.2em;
+		text-shadow: 10px 10px 10px #00000021;
+
+		span {
+			font-weight: 900;
+			position: relative;
+			// Honestly no clue why I've gotta do this but oh well
+			z-index: 1;
+		}
+
+		span:before {
+			content: '';
+			z-index: -1;
+
+			position: absolute;
+			height: 27px;
+			bottom: 3px;
+			left: -5px;
+			width: 135px;
+			background: $red-primary;
+		}
+	}
+}

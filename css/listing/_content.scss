@@ -1,0 +1,97 @@
+#listing-content {
+	width: 65%;
+	margin: 0 auto;
+	padding: 50px 150px;
+	background: #181820;
+
+	h1 {
+		margin: 0 0 5px 0;
+		font-size: 1.9em;
+		font-weight: 800;
+	}
+
+	h5 {
+		margin: 0;
+		font-weight: 500;
+		font-size: 0.9em;
+	}
+
+	h3 {
+		margin: 40px 0 10px 0;
+		font-size: 1.1em;
+	}
+
+	p,
+	ul li {
+		font-size: 0.9em;
+	}
+
+	ul {
+		width: 80%;
+	}
+
+	hr {
+		background: #757575;
+		border: none;
+		height: 1px;
+		margin: 50px auto;
+	}
+
+	form {
+		width: 45%;
+		margin: 0 auto;
+
+		label {
+			float: none;
+			width: 100%;
+			text-align: left;
+			display: block;
+			margin: 10px 0 5px 0;
+
+			.asterisk {
+				font-size: 18px;
+				line-height: 18px;
+				color: rgb(231, 111, 106);
+			}
+		}
+
+		input {
+			margin: 0 0 10px 0;
+			padding: 5px;
+			border: solid 1px #ddd;
+			font-size: 13px;
+			border-radius: 3px;
+			color: #fff;
+			background-color: inherit;
+			width: 100%;
+			box-sizing: border-box;
+			border-color: #504e47;
+		}
+
+		button {
+			margin: 20px auto;
+			display: block;
+			padding: 8px 20px;
+			border-radius: 3px;
+			outline: none;
+			font-size: 0.925em;
+			font-weight: 400;
+			user-select: none;
+			background: $red-primary;
+			border: none;
+			color: #fff;
+			@include box-shadow(8px 8px 12px 0 rgb(0, 0, 0, 6%));
+			@include transition(all 0.075s ease-out);
+		}
+
+		button:hover {
+			cursor: pointer;
+			transform: scale(0.975) translateY(1px);
+			@include box-shadow(none);
+		}
+
+		button:active {
+			transform: scale(0.95);
+		}
+	}
+}

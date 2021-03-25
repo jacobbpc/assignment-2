@@ -1,0 +1,15 @@
+#listing-hero {
+	height: 325px;
+	background: url('../../assets/cafe.jpg') center/cover;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+
+	h1 {
+		margin: 0;
+		font-weight: 700;
+		font-size: 4em;
+		text-shadow: 4px 4px 10px #000000ad;
+	}
+}

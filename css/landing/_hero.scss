@@ -1,0 +1,126 @@
+/* Hero section */
+#hero {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: block;
+	background: url('../assets/HeroBackground.png') center/cover;
+
+	#trigger-title-hide {
+		position: absolute;
+		top: 65%;
+	}
+	#trigger-statistics-show {
+		position: absolute;
+		top: 90%;
+	}
+
+	.container {
+		height: 100%;
+
+		#title {
+			position: absolute;
+			left: 0;
+			top: 30%;
+			font-size: 2.5em;
+
+			@include animation(0.75s ease-in-out 0s 1 fadeFromTop);
+
+			#b {
+				font-weight: 900;
+				display: block;
+				width: 500px;
+				overflow: hidden;
+				white-space: nowrap;
+				@include animation(growFromLeft 1s steps(60, end));
+			}
+
+			#b:before {
+				content: '';
+				z-index: -1;
+
+				position: absolute;
+				height: 27px;
+				bottom: 4px;
+				left: -5px;
+				width: 100px;
+				background: $red-primary;
+
+				@include animation(0.75s ease-out 0s 1 growFromLeft);
+			}
+		}
+
+		// Images
+		img {
+			position: absolute;
+			overflow: hidden;
+			border-radius: 5px;
+			border: 4px solid $red-primary;
+		}
+
+		#one {
+			top: 17%;
+			right: 0;
+			width: 32%;
+			height: auto;
+			@include box-shadow(12px 9px 19px 5px rgb(0, 0, 0, 34%));
+			@include animation(0.5s ease-out 0s 1 fadeFromTop);
+		}
+
+		#two {
+			top: 40%;
+			right: 10%;
+			width: 43%;
+			height: auto;
+			@include box-shadow(12px -12px 19px 5px rgb(0, 0, 0, 34%));
+			@include animation(0.75s ease-out 0s 1 fadeFromTopHigh);
+		}
+	}
+}
+
+@media only screen and (max-width: 1300px) {
+	#hero {
+		.container {
+			// Images
+			#one {
+				top: 31%;
+			}
+
+			#two {
+				top: 50%;
+				right: 5%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	#hero {
+		.container {
+			// Images
+			img {
+				display: none;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	#hero {
+		.container {
+			// Title
+			#title {
+				width: 100%;
+				left: 50%;
+				text-align: center;
+
+				@include transform(translate(-50%, 0));
+				@include animation(none);
+
+				#b:before {
+					left: 15%;
+				}
+			}
+		}
+	}
+}

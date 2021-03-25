@@ -1,0 +1,1 @@
+const Parallax = new Rellax(".parallax");
